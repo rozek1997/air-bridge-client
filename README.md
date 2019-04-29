@@ -12,4 +12,7 @@ used with parameter
 -pf --property "path to property file"
 -i --input "path to file we want to send in text mode"
 
+
+TODO:// rmv printstackTrace from catch block
+
 </pre>
