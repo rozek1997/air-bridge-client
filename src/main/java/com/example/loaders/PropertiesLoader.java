@@ -12,7 +12,7 @@ public class PropertiesLoader {
     private  String propertyFilePath;
 
     public PropertiesLoader(String propertyFilePath){
-        properties = new Properties();
+        this.properties = new Properties();
         this.propertyFilePath=propertyFilePath;
 
     }

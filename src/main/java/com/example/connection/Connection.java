@@ -5,8 +5,9 @@ import com.example.pojo.DataToSend;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.net.*;
-import java.io.*;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.Socket;
 
 
 public class Connection {
@@ -59,5 +60,11 @@ public class Connection {
      */
     public void sentHeader() throws IOException {
         output.println(ConnectionProperties.getInstance().getId());
+    }
+
+    public void closeConnection() throws IOException {
+        output.close();
+        socket.close();
+
     }
 }

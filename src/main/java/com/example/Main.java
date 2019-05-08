@@ -14,12 +14,6 @@ public class Main {
 
     private CommandLine cmd;
 
-    public static void main(String[] args) {
-
-        new Main(args);
-
-    }
-
 
     public Main(String[] args) {
 
@@ -29,10 +23,11 @@ public class Main {
             connectAndSend();
 
         } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
+            System.err.println(e.getMessage());
             System.exit(1);
         }
     }
+
 
     /**
      * read command line arguments
@@ -74,6 +69,18 @@ public class Main {
         propertiesLoader.loadProperties();
     }
 
+    public static void main(String[] args) {
+
+        new Main(args);
+
+    }
+
+    /**
+     * establish connection and sent data from file specified in input args parameters via sockets
+     *
+     * @throws IOException
+     * @throws InterruptedException
+     */
     public void connectAndSend() throws IOException, InterruptedException {
         Connection connection = new Connection();
         connection.connect();
@@ -86,7 +93,9 @@ public class Main {
             connection.sendData(stringToSend);
         }
         System.out.println("Data sent");
+        connection.closeConnection();
     }
+
 
 }
 
