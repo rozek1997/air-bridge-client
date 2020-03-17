@@ -90,3 +90,5 @@ fabric.properties
 # Editor-based Rest Client
 .idea/httpRequests
 
+/.idea/
+/client-java.iml
